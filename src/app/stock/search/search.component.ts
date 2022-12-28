@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
-import { EventMessage, EventType, AuthenticationResult } from '@azure/msal-browser';
+/*import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
+import { EventMessage, EventType, AuthenticationResult } from '@azure/msal-browser';*/
 import { filter } from 'rxjs/operators';
 import {SharedService} from '../../shared.service';
 
@@ -12,7 +12,9 @@ import {SharedService} from '../../shared.service';
 export class SearchComponent implements OnInit {
   loginDisplay = false;
 
-  constructor(private authService: MsalService, private msalBroadcastService: MsalBroadcastService,
+  constructor(
+    //private authService: MsalService,
+    // private msalBroadcastService: MsalBroadcastService,
     public sharedService: SharedService) { }
 
     showFiller = false;
@@ -68,7 +70,7 @@ export class SearchComponent implements OnInit {
 
   
   setLoginDisplay() {
-    this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
+   // this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
     this.sharedService.setEstadoLogin(this.loginDisplay);
   }
 

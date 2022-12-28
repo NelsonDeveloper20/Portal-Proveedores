@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
-import { EventMessage, EventType, AuthenticationResult } from '@azure/msal-browser';
+/*import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
+import { EventMessage, EventType, AuthenticationResult } from '@azure/msal-browser';*/
 import { filter } from 'rxjs/operators';
 import {SharedService} from '../shared.service';
 
@@ -12,12 +12,13 @@ import {SharedService} from '../shared.service';
 export class HomeComponent implements OnInit {
   loginDisplay = false;
   hamburgerClass: boolean = false;
-  constructor(private authService: MsalService, private msalBroadcastService: MsalBroadcastService,
+  constructor(
+    //private authService: MsalService, private msalBroadcastService: MsalBroadcastService,
     public sharedService: SharedService
     ) { }
 
   ngOnInit(): void {
-    this.msalBroadcastService.msalSubject$
+   /* this.msalBroadcastService.msalSubject$
       .pipe(
         filter((msg: EventMessage) => msg.eventType === EventType.LOGIN_SUCCESS),
       )
@@ -26,12 +27,12 @@ export class HomeComponent implements OnInit {
         const payload = result.payload as AuthenticationResult;
         this.authService.instance.setActiveAccount(payload.account);
       });
-
+*/
       this.setLoginDisplay();
   }
 
   setLoginDisplay() {
-    this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
+    //this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
   }
 
 }

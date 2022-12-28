@@ -5,12 +5,12 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import {
+/*import {
   MsalGuardConfiguration,
   MsalService,
   MSAL_GUARD_CONFIG,
 } from '@azure/msal-angular';
-import { RedirectRequest } from '@azure/msal-browser';
+import { RedirectRequest } from '@azure/msal-browser';*/
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, filter, mergeMap, switchMap, take } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
@@ -24,8 +24,8 @@ export class TokenInterceptor implements HttpInterceptor {
 
   constructor(
     private authService: AuthService,
-    private msalService: MsalService,
-    @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration
+   // private msalService: MsalService,
+   // @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration
   ) {
     // TokenInterceptor
   }
@@ -48,25 +48,25 @@ export class TokenInterceptor implements HttpInterceptor {
                   return next.handle(this.addToken(req));
                 } else {
                   this.authService.logout();
-                  if (this.msalGuardConfig.authRequest) {
+                 /* if (this.msalGuardConfig.authRequest) {
                     this.msalService.loginRedirect({
                       ...this.msalGuardConfig.authRequest,
                     } as RedirectRequest);
                   } else {
                     this.msalService.loginRedirect();
-                  }
+                  }*/
                   return next.handle(req);
                 }
               }),
               catchError((err: any) => {
                 this.isRefreshing = false;
-                if (this.msalGuardConfig.authRequest) {
+               /* if (this.msalGuardConfig.authRequest) {
                   this.msalService.loginRedirect({
                     ...this.msalGuardConfig.authRequest,
                   } as RedirectRequest);
                 } else {
                   this.msalService.loginRedirect();
-                }
+                }*/
                 return next.handle(req);
               })
             );

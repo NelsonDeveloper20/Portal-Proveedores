@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/services/auth.service';
-import { MsalService } from '@azure/msal-angular';
+//import { MsalService } from '@azure/msal-angular';
 
 @Component({
   selector: 'app-navigation',
@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
     router: Router,
     private modalService: NgbModal,
     private authService: AuthService,
-    private msalService: MsalService
+    //private msalService: MsalService
   ) {
      router.events.subscribe((val) => {
       if (location.path() != '') {
@@ -51,7 +51,7 @@ export class NavigationComponent implements OnInit {
   }
 
   setLoginDisplay() {
-    this.loginDisplay = this.msalService.instance.getAllAccounts().length > 0;
+   // this.loginDisplay = this.msalService.instance.getAllAccounts().length > 0;
   }
 
   dashboardArray = ['/', '/inicio', '/request'];

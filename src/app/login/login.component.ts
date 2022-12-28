@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
-import {
+//import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
+/*import {
   EventMessage,
   EventType,
   AuthenticationResult,
-} from '@azure/msal-browser';
+} from '@azure/msal-browser';*/
 import { NgxSpinnerService } from 'ngx-spinner';
 import { filter, finalize } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private userService: UserService, //api 
     private spinner: NgxSpinnerService,
-    private msalService: MsalService,
-    private msalBroadcastService: MsalBroadcastService,
+    //private msalService: MsalService,
+    //private msalBroadcastService: MsalBroadcastService,
     public sharedService: SharedService
   ) {}
   user_register()
@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
   }
 
   setLoginDisplay() {
-    this.loginDisplay = this.msalService.instance.getAllAccounts().length > 0;
+ //   this.loginDisplay = this.msalService.instance.getAllAccounts().length > 0;
   }
 
   Iniciarsession(): void {

@@ -1,7 +1,7 @@
 //import { Component, OnInit } from '@angular/core';
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
+//import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
 import { SharedService } from '../shared.service';
 import {
   NgbDateStruct,
@@ -54,8 +54,8 @@ export class ComponentReporteComponent implements OnInit, OnDestroy {
   timeout: any = null;
 
   constructor(
-    private msalService: MsalService,
-    private msalBroadcastService: MsalBroadcastService,
+   /* private msalService: MsalService,
+    private msalBroadcastService: MsalBroadcastService,*/
     private authService: AuthService,
     public sharedService: SharedService,
     private calendar: NgbCalendar,
@@ -109,7 +109,7 @@ export class ComponentReporteComponent implements OnInit, OnDestroy {
   }
 
   setLoginDisplay() {
-    this.loginDisplay = this.msalService.instance.getAllAccounts().length > 0;
+   // this.loginDisplay = this.msalService.instance.getAllAccounts().length > 0;
   }
 
   buscarSolicitudes() {

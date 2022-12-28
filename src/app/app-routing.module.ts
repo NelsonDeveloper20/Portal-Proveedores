@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 //import { AdminComponent } from './admin/admin.component';
 //import { Index1Component } from './dashboard/index1/index1.component';
 import { HomeComponent } from './home/home.component';
-import { MsalGuard } from '@azure/msal-angular';
+//import { MsalGuard } from '@azure/msal-angular';
 import { SearchComponent } from './stock/search/search.component';
 import { SearchdetailComponent } from './stock/searchdetail/searchdetail.component';
 import { ReserveComponent } from './stock/reserve/reserve.component';

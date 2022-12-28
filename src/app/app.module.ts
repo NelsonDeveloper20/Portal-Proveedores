@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-
+/*
 import {
   IPublicClientApplication,
   PublicClientApplication,
@@ -28,7 +28,7 @@ import {
   MSAL_INTERCEPTOR_CONFIG,
   MsalGuardConfiguration,
   MsalRedirectComponent,
-} from '@azure/msal-angular';
+} from '@azure/msal-angular';*/
 
 import { SharedService } from './shared.service';
 // import { NgbdSortableHeader } from './sortable.directive';
@@ -695,10 +695,14 @@ const isIE =
   window.navigator.userAgent.indexOf('MSIE ') > -1 ||
   window.navigator.userAgent.indexOf('Trident/') > -1;
 
-export function loggerCallback(logLevel: LogLevel, message: string) {
-  console.log('loggerCallback => ', logLevel, message);
+export function loggerCallback(
+  //logLevel: LogLevel, 
+  message: string) {
+  console.log('loggerCallback => ', 
+  //logLevel, 
+  message);
 }
-
+/*
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {  
@@ -721,14 +725,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
 
 export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
   const protectedResourceMap = new Map<string, Array<string>>();
- /* console.log('datt');
-  protectedResourceMap.set(environment.baseUrl, [
-    `api://${environment.applicationId}/api.read`,
-  ]);
-  protectedResourceMap.set('https://graph.microsoft.com/v1.0/me', [
-    'user.read',
-  ]);
-*/
+ 
   return {
     interactionType: InteractionType.Redirect,
     protectedResourceMap,
@@ -743,7 +740,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
       scopes: ['user.read'],
     },
   };
-}
+}*/
 
 @NgModule({
   declarations: [
@@ -1424,11 +1421,11 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     HeaderModule,
     BoardModule,
 
-    MsalModule,
+   // MsalModule,
   ],
   providers: [
     SharedService,
-    {
+   /* {
       provide: HTTP_INTERCEPTORS,
       useClass: MsalInterceptor,
       multi: true,
@@ -1444,16 +1441,19 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     {
       provide: MSAL_INTERCEPTOR_CONFIG,
       useFactory: MSALInterceptorConfigFactory,
-    },
+    },*/
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true,
     },
-    MsalService,
+    /*MsalService,
     MsalGuard,
-    MsalBroadcastService,
+    MsalBroadcastService,*/
   ],
-  bootstrap: [AppComponent, MsalRedirectComponent],
+  bootstrap: [
+    AppComponent, 
+   // MsalRedirectComponent
+  ],
 })
 export class AppModule {}

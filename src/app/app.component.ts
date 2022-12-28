@@ -1,11 +1,11 @@
 import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
-import {
+/*import {
   MsalService,
   MsalBroadcastService,
   MSAL_GUARD_CONFIG,
   MsalGuardConfiguration,
 } from '@azure/msal-angular';
-import { EventMessage, EventType } from '@azure/msal-browser';
+import { EventMessage, EventType } from '@azure/msal-browser';*/
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import { AuthService } from './services/auth.service';
@@ -24,9 +24,9 @@ export class AppComponent implements OnInit, OnDestroy {
   private readonly _destroying$ = new Subject<void>();
 
   constructor(
-    @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
-    private msalService: MsalService,
-    private msalBroadcastService: MsalBroadcastService,
+    //@Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
+    //private msalService: MsalService,
+    //private msalBroadcastService: MsalBroadcastService,
     private authService: AuthService
   ) {}
 

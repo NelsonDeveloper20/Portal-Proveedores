@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 
 
 import { Router } from '@angular/router';
-import {
+/*import {
   MsalService,
   MsalBroadcastService,
   MSAL_GUARD_CONFIG,
@@ -13,7 +13,7 @@ import {
   EventType,
   AuthenticationResult, 
   PopupRequest, 
-} from '@azure/msal-browser';
+} from '@azure/msal-browser';*/
 import { Subject } from 'rxjs';
 import { filter,takeUntil } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
 
   constructor( 
     private router: Router, 
-    private msalService: MsalService, 
+    //private msalService: MsalService, 
     private authService: AuthService
   ) {}
 
@@ -198,7 +198,7 @@ this.totalnotification=this.notificacion.length;
   }
 
   setLoginDisplay() {
-    this.loginDisplay = this.msalService.instance.getAllAccounts().length > 0;
+   // this.loginDisplay = this.msalService.instance.getAllAccounts().length > 0;
     console.log('status:' + this.loginDisplay);
   }
 
@@ -237,9 +237,9 @@ this.totalnotification=this.notificacion.length;
     // } else {
       takeUntil(this._destroying$)
     this.authService.logout(); 
-    this.msalService.logoutRedirect({
+    /*this.msalService.logoutRedirect({
       postLogoutRedirectUri: '/',
-    });
+    });*/
     // }
   }
 
