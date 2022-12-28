@@ -1,0 +1,32 @@
+
+
+  
+      .divider:after,
+      .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #eee;
+      }
+      .h-custom {
+      height: calc(100% - 73px);
+      }
+      @media (max-width: 450px) {
+      .h-custom {
+      height: 100%;
+      }
+      }
+      /*BOTON INI*/
+      .btn-primary {
+            background-color: #0869c1;
+            border-color: #6c757d;
+        }
+/*FOOTHER */
+        .bg-primaryfoot {
+            background-color: #1e3789 !important;
+        }
+
+        .form-label {
+            margin-bottom: 0.5rem !important;
+            color: rgb(14 48 109) !important;
+        }

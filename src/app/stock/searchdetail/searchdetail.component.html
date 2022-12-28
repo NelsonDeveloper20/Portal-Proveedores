@@ -1,0 +1,749 @@
+<div class="content-body">
+    <div class="container-fluid default-mt-expansion default-autocomplete default-mt-btn">
+
+        <!-- <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h2>Hola, Bienvenido!</h2>
+                    <p class="mb-0">Este es tu formulario de búsqueda de Stock</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Resumen</a></li>
+                    <li class="breadcrumb-item "><a href="javascript:void(0)">Detalle</a></li>
+                </ol>
+            </div>
+        </div> -->
+
+        <div class="row">
+			<div class="col-xl-12 col-lg-12">                  
+
+                 <mat-accordion class="mat-accordion card example-headers-align">
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3>Buscar</h3>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <div class="basic-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Modelo:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <select class="form-control form-control-lg default-select ">
+                                                <option>Todos</option>
+                                                <option>Yaris</option>
+                                                <option>Rav4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Artículo:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <input type="text" class="form-control form-control-lg" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Color:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <input type="text" class="form-control form-control-lg" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Año Modelo:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <input type="text" class="form-control form-control-lg" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Estado:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <select class="form-control form-control-lg default-select ">
+                                                <option>Todos</option>
+                                                <option>Disponible</option>
+                                                <option>Diponible devuelto</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <div class="col-xl-2 col-lg-2">
+                                        </div>
+                                        <div class="col-xl-10 col-lg-10">
+                                            <button type="button" class="btn btn-sm btn-primary">Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                  
+                    </mat-expansion-panel>
+                  </mat-accordion> 
+
+                <!-- <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Buscar</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <form>
+                                <div class="row">
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Modelo:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Artículo:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Color:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Año Modelo:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Estado:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <div class="col-xl-1 col-lg-1">
+                                            </div>
+                                            <div class="col-xl-11 col-lg-11">
+                                                <button type="button" class="btn btn-sm btn-primary">Buscar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        
+        <div class="col-sm-2 col-lg-2 col-md-2 form-group d-block">
+            <mat-slide-toggle [(ngModel)]="isChecked">         
+                 <div *ngIf="isChecked">
+                    Vista resumen
+                  </div>
+                  <div *ngIf="!isChecked">
+                    Vista detalle
+                  </div>    
+            </mat-slide-toggle>
+        </div>
+
+        <div class="card">
+            <div class="row"><br>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-md-4 card-item">
+                    <div class="card" style="background-color: #DBE8F1;">
+                        <div class="card-header">      
+                            <h2 class="card-title">
+                                <div class="row"> 
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #FF794A;">drive_eta</mat-icon> 
+                                    &nbsp;1590 - 1122334
+                                </div>
+                                
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12 col-md-12">
+                                        <div class="form-group " style="color: #000;">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Color: Naranja
+                                                </div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                                    <!-- <p><strong>Mod.: </strong>2023</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Fabric.: 2022
+                                                </div>
+                                                <div class="col-sm-1 col-lg-1 col-md-1">
+                                                    
+                                                </div>
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Mod.: 2023
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-10 col-lg-10 col-md-10">
+                                                    Ubicación: Surquillo - Sótano
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Por declarar
+                                                </div>
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    <!-- <button type="button" class="btn btn-info btn-xs" (click)="openVerticallyCentered(content)">ver mas</button>
+                                                     -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                </div>                                    
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <!-- <button type="button" class="btn btn-dark btn-xs">Reservar</button> -->
+                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                <mat-icon>reorder</mat-icon>
+                            </button>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item (click)="openVerticallyCentered(content)">
+                                    <mat-icon>loupe</mat-icon>
+                                    <span>Más info</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>add_shopping_cart</mat-icon>
+                                    <span>Reservar</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-md-4 card-item">
+                    <div class="card" style="background-color: #DBE8F1;">
+                        <div class="card-header">      
+                            <h2 class="card-title">
+                                <div class="row"> 
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #FF794A;">drive_eta</mat-icon> 
+                                    &nbsp;&nbsp;1590 - 1122334
+                                </div>
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12 col-md-12">
+                                        <div class="form-group " style="color: #000;">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Color: Naranja
+                                                </div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                                    <!-- <p><strong>Mod.: </strong>2023</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Fabric.: 2022
+                                                </div>
+                                                <div class="col-sm-1 col-lg-1 col-md-1">
+                                                    
+                                                </div>
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Mod.: 2023
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-10 col-lg-10 col-md-10">
+                                                    Ubicación: Surquillo - Sótano
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Por declarar
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                </div>                                    
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Example icon-button with a menu">
+                                <mat-icon>reorder</mat-icon>
+                            </button>
+                            <mat-menu #menu1="matMenu">
+                                <button mat-menu-item (click)="openVerticallyCentered(content)">
+                                    <mat-icon>loupe</mat-icon>
+                                    <span>Más info</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>add_shopping_cart</mat-icon>
+                                    <span>Reservar</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-md-4 card-item">
+                    <div class="card" style="background-color: #A3C1DC;">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <div class="row"> 
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #ff0000;">drive_eta</mat-icon> 
+                                    &nbsp;&nbsp;1590 - 1122334
+                                </div>
+                            </h2>      
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12 col-md-12">
+                                        <div class="form-group " style="color: #000;">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Color: Rojo
+                                                </div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                                    <!-- <p><strong>Mod.: </strong>2023</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Fabric.: 2022
+                                                </div>
+                                                <div class="col-sm-1 col-lg-1 col-md-1">
+                                                    
+                                                </div>
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Mod.: 2023
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-10 col-lg-10 col-md-10">
+                                                    Ubicación: Surquillo - Sótano
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Por declarar
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                </div>                                    
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Example icon-button with a menu">
+                                <mat-icon>reorder</mat-icon>
+                            </button>
+                            <mat-menu #menu2="matMenu">
+                                <button mat-menu-item (click)="openVerticallyCentered(content)">
+                                    <mat-icon>loupe</mat-icon>
+                                    <span>Más info</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>add_shopping_cart</mat-icon>
+                                    <span>Reservar</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-md-4 card-item">
+                    <div class="card" style="background-color: #A3C1DC;">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <div class="row"> 
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #ff0000;">drive_eta</mat-icon> 
+                                    &nbsp;&nbsp;1590 - 1122334
+                                </div>
+                            </h2>      
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12 col-md-12">
+                                        <div class="form-group " style="color: #000;">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Color: Rojo
+                                                </div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                                    <!-- <p><strong>Mod.: </strong>2023</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Fabric.: 2022
+                                                </div>
+                                                <div class="col-sm-1 col-lg-1 col-md-1">
+                                                    
+                                                </div>
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Mod.: 2023
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-10 col-lg-10 col-md-10">
+                                                    Ubicación: Surquillo - Sótano
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Por declarar
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                </div>                                    
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu">
+                                <mat-icon>reorder</mat-icon>
+                            </button>
+                            <mat-menu #menu3="matMenu">
+                                <button mat-menu-item (click)="openVerticallyCentered(content)">
+                                    <mat-icon>loupe</mat-icon>
+                                    <span>Más info</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>add_shopping_cart</mat-icon>
+                                    <span>Reservar</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-md-4 card-item">
+                    <div class="card" style="background-color: #F1BB8F;">
+                        <div class="card-header">      
+                            <h2 class="card-title">
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #29AE61;">drive_eta</mat-icon> 
+                                    &nbsp;&nbsp;1590 - 1122334
+                                </div>
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12 col-md-12">
+                                        <div class="form-group " style="color: #000;">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Color: Verde
+                                                </div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                                    <!-- <p><strong>Mod.: </strong>2023</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Fabric.: 2022
+                                                </div>
+                                                <div class="col-sm-1 col-lg-1 col-md-1">
+                                                    
+                                                </div>
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Mod.: 2023
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-10 col-lg-10 col-md-10">
+                                                    Ubicación: Surquillo - Sótano
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Por declarar
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                </div>                                    
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <button mat-icon-button [matMenuTriggerFor]="menu4" aria-label="Example icon-button with a menu">
+                                <mat-icon>reorder</mat-icon>
+                            </button>
+                            <mat-menu #menu4="matMenu">
+                                <button mat-menu-item (click)="openVerticallyCentered(content)">
+                                    <mat-icon>loupe</mat-icon>
+                                    <span>Más info</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>remove_shopping_cart</mat-icon>
+                                    <span>Liberar</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>pan_tool</mat-icon>
+                                    <span>Solicitar Liberación</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-md-4 card-item">
+                    <div class="card" style="background-color: #F1BB8F;">
+                        <div class="card-header">      
+                            <h4 class="card-title">
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #29AE61;">drive_eta</mat-icon> 
+                                    &nbsp;&nbsp;1590 - 1122334
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12 col-md-12">
+                                        <div class="form-group " style="color: #000;">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Color: Verde
+                                                </div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                                    <!-- <p><strong>Mod.: </strong>2023</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Fabric.: 2022
+                                                </div>
+                                                <div class="col-sm-1 col-lg-1 col-md-1">
+                                                    
+                                                </div>
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Mod.: 2023
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-10 col-lg-10 col-md-10">
+                                                    Ubicación: Surquillo - Sótano
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Por declarar
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                </div>                                    
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                            
+                            </div>
+                            <button mat-icon-button [matMenuTriggerFor]="menu5" aria-label="Example icon-button with a menu">
+                                <mat-icon>reorder</mat-icon>
+                            </button>
+                            <mat-menu #menu5="matMenu">
+                                <button mat-menu-item (click)="openVerticallyCentered(content)">
+                                    <mat-icon>loupe</mat-icon>
+                                    <span>Más info</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>remove_shopping_cart</mat-icon>
+                                    <span>Liberar</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>pan_tool</mat-icon>
+                                    <span>Solicitar Liberación</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-md-4 card-item">
+                    <div class="card" style="background-color: #524f4f;">
+                        <div class="card-header">      
+                            <h4 class="card-title">
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #29AE61;">drive_eta</mat-icon> 
+                                    &nbsp;&nbsp;1590 - 1122334
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12 col-md-12">
+                                        <div class="form-group " style="color: #000;">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Color: Verde
+                                                </div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                                    <!-- <p><strong>Mod.: </strong>2023</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Fabric.: 2022
+                                                </div>
+                                                <div class="col-sm-1 col-lg-1 col-md-1">
+                                                    
+                                                </div>
+                                                <div class="col-sm-5 col-lg-5 col-md-5">
+                                                    Mod.: 2023
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-10 col-lg-10 col-md-10">
+                                                    Ubicación: Surquillo - Sótano
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-7 col-lg-7 col-md-7">
+                                                    Por declarar
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                </div>                                    
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <button mat-icon-button [matMenuTriggerFor]="menu6" aria-label="Example icon-button with a menu">
+                                <mat-icon>reorder</mat-icon>
+                            </button>
+                            <mat-menu #menu6="matMenu">
+                                <button mat-menu-item (click)="openVerticallyCentered(content)">
+                                    <mat-icon>loupe</mat-icon>
+                                    <span>Más info</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>remove_shopping_cart</mat-icon>
+                                    <span>Liberar</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>pan_tool</mat-icon>
+                                    <span>Solicitar Liberación</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+        <!-- <input type="color" value="#29AE61" disabled="disabled"> -->
+        1590 - 112233
+      </h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <p><strong>Motor:  </strong>3411541 Turbo</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <p><strong>Chasis:  </strong>XXXXXXX</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <p><strong>Nota:  </strong>XXXXXXXXXXXXXXXXXXXXX</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info btn-xs" (click)="modal.close('Close click')">Cerrar</button>
+    </div>
+  </ng-template>

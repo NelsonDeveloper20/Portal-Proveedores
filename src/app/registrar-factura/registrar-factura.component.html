@@ -1,0 +1,698 @@
+<style>
+  .content-body {
+    margin-left: 0rem !important;
+}
+.row{
+  margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+.mat-expansion-panel-body {
+    padding: 0 0px 0px !important;
+}
+</style>
+<ngx-spinner
+  bdColor="rgba(255, 255, 255, 1)"
+  size="medium"
+  color="#0D7ABD"
+  type="ball-beat"
+  [fullScreen]="true"
+  ><p style="color: black">Loading...</p></ngx-spinner>
+<app-header></app-header>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+<div class="card-header card-header-warning" style="    width: 18%;
+padding-bottom: 0px;
+padding-top: 0px;">
+  <div class="card-icon">
+      <button mat-icon-button color="primary" (click)="backClicked()" aria-label="Example icon button with a home icon">
+          <mat-icon>keyboard_backspace</mat-icon>
+        </button> 
+  </div>
+  <h5 class="card-title" style="font-size: 15px;
+  font-weight: 500;
+  color: #000000a3;
+  text-transform: capitalize;">Registar Factura</h5> 
+    
+</div>
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+        
+          <div class="col-lg-2 col-md-6 col-sm-6">            
+          </div>
+          <div class="col-lg-8 col-md-6 col-sm-6">             
+              <div class="card card-stats" style="margin-top: 4px !important;">
+                  <div class="row card-header-success card-header-icon" style="padding-bottom: 5px;
+                  padding-top: 5px;">
+                     
+                     
+                  
+                    <div class="col-lg-12"> 
+                      <div class="row">
+                        <div class="col-lg-12" > 
+                          <mat-radio-group aria-label="Select an option" [(ngModel)]="tipoServicio">
+                            <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                              {{season}}
+                            </mat-radio-button>
+                          </mat-radio-group>  
+                        </div> 
+                      </div>
+                        <div class="row">
+                        <div class="col-lg-11">
+                        <mat-form-field>
+                          <div class="myfilebrowser">
+                          <mat-toolbar style="font-size: 15px;">
+                          <!-- Readonly Input to show File names -->
+                          <input matInput  readonly [(ngModel)]="myfilename"  readonly name="memberContactNo" name="primeryfiles" />
+                          <!-- Browse Button -->
+                            <button mat-flat-button class="btn btn-primary">
+                            Abrir
+                            </button>
+                          </mat-toolbar> 
+                          <!-- Fetch selected filed on change -->
+                            <input type="file" #UploadFileInput id="fileUpload"  (change)="onFileChangeprimary($event)" name="fileUpload"
+                            multiple="multiple"    accept=".pdf" />
+                          </div>
+                        </mat-form-field>
+                        </div>
+
+                        <div class="col-lg-1">
+                        <br>
+                          <button mat-mini-fab class="btn btn-danger btn-sm"  (click)="removedprimary()"  color="btn-danger"
+                          aria-label="Example icon button with a delete icon">
+                          <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+
+                        </div>                     
+                  </div>                   
+                  <div class="col-lg-12"> 
+                      <div class="row">
+                          <div class="col-lg-11"> 
+                      <mat-form-field>  
+                      <div class="myfilebrowser">
+                  
+                        <mat-toolbar style="font-size: 15px;">
+                  
+                          <!-- Readonly Input to show File names -->
+                          <input matInput  [(ngModel)]="myfilenameSecond" readonly name="memberContactNo" /> 
+                          <!-- Browse Button -->
+                          <button mat-flat-button class="btn btn-primary">
+                            Abrir
+                          </button>
+                        </mat-toolbar> 
+                        <!-- Fetch selected filed on change -->
+                        <input type="file" #UploadFileInput id="fileUpload" (change)="onFileChangesecond($event)" name="fileUpload"
+                          multiple="multiple"     accept=".xml" /> 
+                      </div> 
+                      </mat-form-field>
+                  </div>
+                  <div class="col-lg-1"><br>
+                   <button mat-mini-fab class="btn btn-danger btn-sm" (click)="removedsecond()"   color="btn-danger"
+                   aria-label="Example icon button with a delete icon">
+                   <mat-icon>delete</mat-icon>
+                 </button> 
+                 </div>
+        
+                   </div>
+                  </div>
+ 
+                                   
+              </div> 
+              <div class="card-body table-responsive" style="padding-top: 0px;">
+                <div class="row"> 
+                  <div class="col-lg-12" *ngIf="correctmesaje">
+                    <div class="col-lg-12 alert-success" style="padding-bottom: 0px; 
+                    border-radius: 6px;">
+                  <div class="row">
+                  
+                        <div class="col-lg-1">
+                         <i class="material-icons" data-notify="icon" style="    font-size: 36px;">info</i>
+                        </div>   
+                       
+                     <div class="col-lg-11">
+                       <table>
+                         <thead>
+                           <tr>
+                             <td></td>
+                           </tr>
+                         </thead>
+                         <tbody style="color: black; height: 0px !important;">
+                  <tr>
+                  <td> Estado carga de la factura</td><td style="padding-left: 10px;
+                  padding-right: 10px;">:</td><td><b style="font-weight: 500 !important;"> Correcto</b></td>
+                  
+                  </tr>
+                  <tr>
+                  <td> Estado carga del XML </td><td style="padding-left: 10px;
+                  padding-right: 10px;">:</td><td><b style="font-weight: 500 !important;">Correcto</b></td>
+                  
+                  </tr> 
+                  <tr>
+                  <td> Fecha de carga</td><td style="padding-left: 10px;
+                  padding-right: 10px;">:</td><td><b style="font-weight: 500 !important;">18/09/2022</b></td>
+                  
+                  </tr> 
+                         </tbody>
+                       </table> 
+                     </div>  
+                    </div>
+                  
+                         </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12">
+                    <div class="card" style="    margin-top: 8px !important;box-shadow: 0px 0px 13px 0px rgb(82 63 105 / 14%) !important;">
+                        <div class="card-header card-header-warning" style=" padding-bottom: 5px;   display: block !important;">
+                            <h4 class="card-title" style="font-size: 13px;" *ngIf="tipoServicio=='Pedido de compra'">Pedido de compra
+                            </h4>
+                            <h4 class="card-title" style="font-size: 13px;" *ngIf="tipoServicio=='HES'">HES
+                            </h4>
+                            <div class="mat-form-field--inline"> 
+                              
+                              <mat-form-field appearance="outline">
+                             <!-- <mat-label>Nº Pedido de compra</mat-label>-->
+                              <input matInput placeholder=" BSPE-PC011132 " [(ngModel)]="NumOrden">
+                              <button type="button" (click)="getUsers()" mat-icon-button matSuffix>
+                                <mat-icon>search</mat-icon>
+                            </button>
+                            </mat-form-field>
+                          </div>
+                        </div>
+                        <div class="card-body table-responsive" style="
+                        padding-top: 5px;">
+                        <div class="row">
+                          <mat-accordion class="col-lg-12" style="padding-left: 0px;
+                          padding-right: 0px;">
+                          <mat-expansion-panel [expanded]="panelOpenState">
+       <mat-expansion-panel-header>
+         <mat-panel-title>
+           Datos xml seleccionado
+         </mat-panel-title>
+         <mat-panel-description>
+             {{panelOpenState ? '' : ''}}
+         </mat-panel-description>
+       </mat-expansion-panel-header>
+      <div class="row">
+  <div class="col-lg-12"><!--[ngClass]="{'col-lg-12': tipoServicio === 'HES', 'col-lg-12' : tipoServicio === 'Pedido de compra' }" >-->
+    <div class="card" style="    margin-top: 5px !important;"> 
+      <table >
+        <thead class="text-warning"> 
+          <th colspan="4"  style="border-bottom-width: 1px;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          border-color: #EEEEEE;">Datos Factura:</th> 
+        </thead>
+        <tbody> 
+            <tr> 
+                <td style="padding: 6px; border: 0px solid white;">Nº Factura</td>
+                <td style="padding: 6px; border: 0px solid white;">:</td>
+                <td colspan="2" style="padding: 6px; border: 0px solid white;">{{NumeroFactura}}</td> 
+            </tr>
+            <tr> 
+                <td style="padding: 6px; border: 0px solid white;">Fecha de emisión</td>
+                <td style="padding: 6px; border: 0px solid white;">:</td>
+                <td colspan="2" style="padding: 6px; border: 0px solid white;">{{FechaEmision}}
+                </td> 
+            </tr>
+            <tr> 
+                <td style="padding: 6px; border: 0px solid white;">Sub Total</td>
+                <td style="padding: 6px; border: 0px solid white;">:</td>
+                <td colspan="2" style="padding: 6px; border: 0px solid white;">{{SubTotal}}
+                </td> 
+            </tr> 
+            <tr> 
+                <td style="padding: 6px; border: 0px solid white;">IGV</td>
+                <td style="padding: 6px; border: 0px solid white;">:</td>
+                <td colspan="2" style="padding: 6px; border: 0px solid white;">{{IGV}}</td> 
+            </tr> 
+            <tr> 
+                <td style="padding: 6px; border: 0px solid white;">Importe total</td>
+                <td style="padding: 6px; border: 0px solid white;">:</td>
+                <td colspan="2" style="padding: 6px; border: 0px solid white;">{{ImporteTotal}}</td> 
+            </tr> 
+            <tr> 
+                <td style="padding: 6px; border: 0px solid white;">Observacion</td>
+                <td style="padding: 6px; border: 0px solid white;">:</td>
+                <td colspan="2" style="padding: 6px; border: 0px solid white;">{{Observacion}}</td> 
+            </tr> 
+            
+            <tr> 
+             <td colspan="3">
+              <mat-form-field appearance="fill">
+                <mat-label>Grupo detracción</mat-label>
+                <mat-select [(value)]="grupodetraccion">
+                  <mat-option>--Seleccione--</mat-option>
+                  <mat-option value="008">008  -  ARENA Y PIEDRA</mat-option>
+                  <mat-option value="009">009  -  ARRENDAMIENTO DE BIENES</mat-option>
+                  <mat-option value="010">010  -  BIEN INMUEBLE GRAVADO CON IGV</mat-option>
+                  <mat-option value="012">012  -  COMISIÓN MERCANTIL</mat-option>
+                  <mat-option value="019">019  -  CONTRATOS DE CONSTRUCCIÓN</mat-option>
+                  <mat-option value="020">020  -  DEMÁS SERV.GRAVADOS CON El IGV</mat-option>
+                  <mat-option value="021">021  -  DOLAR ARENA Y PIEDRA</mat-option>
+                  <mat-option value="022">022  -  DOLAR ARRENDAMIENTO</mat-option>
+                  <mat-option value="024">024  -  DOLAR BIENES INMUEBLES GRAVADO</mat-option>
+                  <mat-option value="025">025  -  DOLAR COMISION MERCANTIL</mat-option>
+                  <mat-option value="026">026  -  DOLAR CONTRATOS DE CONSTRUC.</mat-option>
+                  <mat-option value="027">027  -  DOLAR DEMAS SERVIC. GRAVADOS</mat-option>
+                  <mat-option value="030">030  -  DOLAR FAB. BIENES POR ENC.</mat-option>
+                  <mat-option value="037">037  -  DOLAR INTERM. LAB</mat-option>
+                  <mat-option value="040">040  -  DOLAR MADERA</mat-option>
+                  <mat-option value="DOL008">DOL008  -  DOLAR MANT. Y REPAR. BIENES</mat-option>
+                  <mat-option value="DOL009">DOL009  -  DOLAR MOVIM. DE TIERRA</mat-option>
+                  <mat-option value="DOL012">DOL012  -  DOLAR OTROS SERVICIOS EMPRES.</mat-option>
+                  <mat-option value="DOL019">DOL019  -  DOLAR SERV. TRANS. PERSONAL</mat-option>
+                  <mat-option value="DOL020">DOL020  -  DOLAR TRANSP. DE CARGA</mat-option>
+                  <mat-option value="DOL021">DOL021  -  EXONERADOS</mat-option>
+                  <mat-option value="DOL022">DOL022  -  EXPORTACIÓN</mat-option>
+                  <mat-option value="DOL024">DOL024  -  FAB. DE BIENES POR ENCARGO</mat-option>
+                  <mat-option value="DOL025">DOL025  -  GRATUITO</mat-option>
+                  <mat-option value="DOL026">DOL026  -  HONORARIO 0%</mat-option>
+                  <mat-option value="DOL027">DOL027  -  HONORARIOS</mat-option>
+                  <mat-option value="DOL030">DOL030  -  IMPUESTO GENERAL DE VENTAS</mat-option>
+                  <mat-option value="DOL037">DOL037  -  INAFECTO VENTAS</mat-option>
+                  <mat-option value="DOL040">DOL040  -  INAFECTOS</mat-option>
+                  <mat-option value="EXO">EXO  -  INTERMEDIACIÓN   LABORAL Y TER</mat-option>
+                  <mat-option value="EXP">EXP  -  MADERA</mat-option>
+                  <mat-option value="GRA">GRA  -  MANT. Y REPA. BIENES MUEBLES</mat-option>
+                  <mat-option value="HON">HON  -  MOVIMIENTO DE CARGA</mat-option>
+                  <mat-option value="HON0%">HON0%  -  OTROS SERVICIOS EMPRESARIALES</mat-option>
+                  <mat-option value="IGV">IGV  -  RESIDUOS, SUB PRODUCTOS, DESEC</mat-option>
+                  <mat-option value="INA">INA  -  RETENCION 15%</mat-option>
+                  <mat-option value="INAVTA">INAVTA  -  RETENCIÓN 30%</mat-option>
+                  <mat-option value="RET15">RET15  -  SERVICIO DE TRANSPORTE PERSONA</mat-option>
+                  <mat-option value="RET30">RET30  -  TRANSPORTE DE CARGA</mat-option>
+                </mat-select>
+              </mat-form-field>
+             </td>
+             
+          </tr> 
+        </tbody>
+    </table>
+      
+    
+  </div>
+   
+  </div>
+
+
+
+  </div>
+     </mat-expansion-panel></mat-accordion>
+
+  <!--<div class="col-lg-6">
+  
+  </div>-->
+  <div class="col-lg-12" style="height: 16px;"></div>
+  <mat-accordion class="col-lg-12" style="padding-left: 0px; 
+  padding-right: 0px;"   *ngIf="tipoServicio=='Pedido de compra'">
+  <mat-expansion-panel [expanded]="panelOpenState">
+<mat-expansion-panel-header>
+<mat-panel-title>
+  Datos Pedido De Compra:
+</mat-panel-title>
+<mat-panel-description>
+{{panelOpenState ? '' : ''}}
+</mat-panel-description>
+</mat-expansion-panel-header>
+<div class="row">
+<div class="col-lg-12"><!--[ngClass]="{'col-lg-12': tipoServicio === 'HES', 'col-lg-12' : tipoServicio === 'Pedido de compra' }" >-->
+<div class="card" style="    margin-top: 5px !important;"> 
+<table >
+<thead class="text-warning"> 
+<th colspan="4"  style="border-bottom-width: 1px;
+text-transform: uppercase;
+font-size: 14px;
+font-weight: 600;
+letter-spacing: 0.5px;
+border-color: #EEEEEE;display: none;">Datos Factura:</th> 
+</thead>
+<tbody> 
+<tr> 
+
+<td style="padding: 6px; border: 0px solid white;">Codigo Proyecto</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{CodigoProyecto}}</td> 
+</tr>
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Nombre Pedido</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{NombreProyecto}}
+</td> 
+</tr>
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Nota</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{Nota}}
+</td> 
+</tr> 
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Almacen</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{Almacen}}
+</td> 
+</tr> 
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Dimencion Financiera</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{Dimencionfinanciera}}</td> 
+</tr> 
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Fecha Creacion</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{Fechacreacion}}</td> 
+</tr>   
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+
+
+</div>
+</mat-expansion-panel></mat-accordion> 
+<mat-accordion class="col-lg-12" style="padding-left: 0px; 
+padding-right: 0px;"   *ngIf="tipoServicio!='Pedido de compra'">
+<mat-expansion-panel [expanded]="panelOpenState">
+<mat-expansion-panel-header>
+<mat-panel-title>
+Datos HES:
+</mat-panel-title>
+<mat-panel-description>
+{{panelOpenState ? '' : ''}}
+</mat-panel-description>
+</mat-expansion-panel-header>
+<div class="row">
+<div class="col-lg-12"><!--[ngClass]="{'col-lg-12': tipoServicio === 'HES', 'col-lg-12' : tipoServicio === 'Pedido de compra' }" >-->
+<div class="card" style="    margin-top: 5px !important;"> 
+<table >
+<thead class="text-warning"> 
+<th colspan="4"  style="border-bottom-width: 1px;
+text-transform: uppercase;
+font-size: 14px;
+font-weight: 600;
+letter-spacing: 0.5px;
+border-color: #EEEEEE;display: none;">Datos Factura:</th> 
+</thead>
+<tbody> 
+<tr> 
+
+<td style="padding: 6px; border: 0px solid white;">Nro SubContrato</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{NumSubcontrato}}</td> 
+</tr>
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Fecha Del SubContrato</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{FechaSubcontrato}}
+</td> 
+</tr>
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Descripcion SubContrato</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{DescripcionSubcontrato}}
+</td> 
+</tr> 
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Fecha De Inicio Estimado</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{FechaInicioEstimado}}
+</td> 
+</tr> 
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Codigo De Proyecto</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{CodigoProyectoHes}}</td> 
+</tr>   
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Monto Original</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{MontoOriginal}}</td> 
+</tr>  
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Fecha Fin Estimada</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{FechaFinEstimada}}</td> 
+</tr>  
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Ref SubContrato</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{RefSubcontrato}}</td> 
+</tr>  
+<tr> 
+<td style="padding: 6px; border: 0px solid white;">Monto Total</td>
+<td style="padding: 6px; border: 0px solid white;">:</td>
+<td colspan="2" style="padding: 6px; border: 0px solid white;">{{MontoTotal}}</td> 
+</tr>  
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+
+
+</div>
+</mat-expansion-panel></mat-accordion> 
+
+  <div class="col-lg-12"  *ngIf="tipoServicio=='Pedido de compra'">
+    
+    <div class="card">  
+    <div class="card" style="    margin-top: 5px !important;"> 
+      <table > 
+        <thead class="text-warning"> 
+          <th colspan="4"  style="border-bottom-width: 1px;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          border-color: #EEEEEE;">Datos guia de remisión:</th> 
+        </thead>
+        <tbody> 
+        </tbody>
+    </table> 
+    <table mat-table
+    [dataSource]="dataSourcePedidos" multiTemplateDataRows
+    class="mat-elevation-z2"> 
+  
+  <ng-container matColumnDef="NumGuia">
+    <th mat-header-cell *matHeaderCellDef> Num Guia </th>
+    <td mat-cell *matCellDef="let element"> {{element.NumGuia}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="FechaGuia">
+    <th mat-header-cell *matHeaderCellDef> Fecha Guia </th>
+    <td mat-cell *matCellDef="let element"> {{element.FechaGuia}}  
+      <button   mat-icon-button aria-label="expand row" (click)="(expandedElementPedidos = expandedElementPedidos === element ? null : element); $event.stopPropagation()">
+      <mat-icon *ngIf="expandedElementPedidos !== element">keyboard_arrow_down</mat-icon>
+      <mat-icon *ngIf="expandedElementPedidos === element">keyboard_arrow_up</mat-icon>
+    </button> </td>
+  </ng-container> 
+        <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container> 
+ 
+<ng-container matColumnDef="expandedDetail">
+ <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayPedido.length">
+   <div class="example-element-detail"
+        [@detailExpand]="element == expandedElementPedidos ? 'expanded' : 'collapsed'"> 
+     <div class="example-element-description"> 
+       <table mat-table [dataSource]="element.FacturaGuiaDetalle" class="mat-elevation-z1" style="display: none;">
+
+         <ng-container matColumnDef="{{columnsubs}}" *ngFor="let columnsubs of columsSubs">
+           <th mat-header-cell *matHeaderCellDef> {{columnsubs}} </th>
+           <td mat-cell *matCellDef="let elementSub"> {{elementSub[columnsubs]}} 
+           </td>
+         </ng-container>
+       
+         <tr mat-header-row *matHeaderRowDef="columsSubs"></tr>
+         <tr mat-row *matRowDef="let row; columns: columsSubs;"></tr>
+       </table>
+       
+       <table mdbTable class="tabless">
+         <thead>
+           <tr>
+             <th style="border-bottom: 1px solid #7772726e;padding: 5px;">ID</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">Nombre</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">Nº Linea</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">Configuracion</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">Tamanio</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">Color</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">Estilo</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">CantSolicitada</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">CantRecibida</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">Monto</th>
+              <th style="border-bottom: 1px solid #7772726e;padding: 5px;">CantRestante</th> 
+           </tr>
+         </thead>
+         
+         <tbody> 
+           <tr mdbTableCol *ngFor="let elem of element.FacturaGuiaDetalle">              
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.ItemId}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.Nombre}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.NumeroLinea}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.Configuracion}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.Tamanio}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.Color}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.Estilo}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.CantSolicitada}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.CantRecibida}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.Monto}}</td>
+             <td style="border-bottom: 1px solid #7772726e;padding: 5px;">{{elem.CantRestante}}</td>                                  
+           </tr>
+           </tbody>
+       </table>
+     </div>
+   </div>
+ </td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="columnsToDisplayPedido"></tr>
+<tr mat-row *matRowDef="let element; columns: columnsToDisplayPedido;"
+   class="example-element-row"
+   
+   [class.example-expanded-row]="expandedElementPedidos === element" (click)="expandedElementPedidos = expandedElementPedidos === element ? null : element">
+</tr>
+<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+</table>
+<!--{{selection | json  }} -->
+    </div>
+  </div>
+</div>
+
+    
+  <div class="col-lg-12" *ngIf="tipoServicio!='Pedido de compra'">
+    <div class="card">  
+      <table > 
+        <thead class="text-warning"> 
+          <th colspan="4"  style="border-bottom-width: 1px;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          border-color: #EEEEEE;">Datos Subcontrato:</th> 
+        </thead>
+        <tbody> 
+        </tbody>
+    </table>
+    
+    <table mat-table [dataSource]="dataSourceHest" class="mat-elevation-z0" >
+      <!-- Position Column -->
+      <ng-container matColumnDef="Hes">
+        <th mat-header-cell *matHeaderCellDef> Hes </th>
+        <td mat-cell *matCellDef="let element"> {{element.Hes}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="SecueEstadoPago">
+        <th mat-header-cell *matHeaderCellDef> Secue. Estado Pago </th>
+        <td mat-cell *matCellDef="let element"> {{element.SecueEstadoPago}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let element"> {{element.Fecha}} </td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Avance">
+        <th mat-header-cell *matHeaderCellDef> Avance </th>
+        <td mat-cell *matCellDef="let element"> {{element.Avance}} </td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="TotalNetoMontoOrig">
+        <th mat-header-cell *matHeaderCellDef> Total Neto Monto Orig. </th>
+        <td mat-cell *matCellDef="let element"> {{element.TotalNetoMontoOrig}} </td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Descripcion">
+        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+      </ng-container>
+     
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsHest"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsHest;"></tr>
+    </table>
+      
+    </div>
+     
+  </div>
+ 
+  <!--<div class="col-lg-6">
+  
+  
+  </div> -->
+  <div class="col-lg-12">
+    <div class="card">
+                        
+      <div class="row">  
+  </div>
+   </div> 
+  </div>
+  
+  <div class="col-lg-12">
+  <div class="row">
+  <div class="col-lg-6" *ngIf="!Enviado">
+  <div class="card-icon">     
+  <button mat-raised-button  style="float: right" class="btn btn-info" 
+  (click)="backClicked()">Cancelar</button>
+  </div>   
+  </div>  
+   <div class="col-lg-6" *ngIf="!Enviado">
+  <div class="card-icon">
+  <button mat-raised-button  color="primary"
+   (click)="submitform()" >Guardar</button>
+  </div>   
+  </div>
+
+  <div class="col-lg-12" style="text-align: center;" *ngIf="Enviado">
+    <button mat-fab color="primary" (click)="nuevo()" aria-label="Example icon button with a delete icon">
+     Nuevo <!-- <mat-icon>layers_clear</mat-icon>-->
+    </button>
+  </div>
+  <div class="col-lg-12" style="text-align: center;" *ngIf="registrado">
+    <button mat-fab color="primary" (click)="Enviar()" aria-label="Example icon button with a delete icon">
+     Enviar <!-- <mat-icon>layers_clear</mat-icon>-->
+    </button>
+  </div>
+  </div>
+  </div>
+  
+                        </div>
+                         
+                           
+                          
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+                </div>
+                    
+          </div>  
+      </div>  
+
+    
+  </div>
+</div> 
+ 
+    
+<app-switcher></app-switcher>
+   

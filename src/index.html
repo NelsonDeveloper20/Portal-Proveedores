@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="" />
+  <meta name="author" content="DexignZone" />
+  <meta name="robots" content="" />
+  <meta name="description" content="Grupo Pana S.A. - Solicitudes" />
+  <meta property="og:title" content="Grupo Pana S.A. - Solicitudes" />
+  <meta property="og:description" content="Grupo Pana S.A. - Solicitudes" />
+  <meta property="og:image" content="" />
+  <meta name="format-detection" content="telephone=no">
+  <title>Besco</title>
+  <base href="/"> 
+  <script src="assets\vendor\jquery\jquery.min.js"></script>
+  <link rel="icon" href="assets/images/GP.ico" type="image/x-icon" />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/GP.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .btn-primary {
+    color: #fff;
+    background-color: #1266f1;
+} 
+.md-button {
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  min-width: 88px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration:none;
+  border: none;
+  outline: none;
+}
+  </style>
+</head>
+
+<body data-typography="poppins"
+      data-theme-version="light"
+      data-layout="vertical"
+      data-nav-headerbg="color_8"
+      data-headerbg="color_1"
+      data-sidebar-style="full"
+      data-sibebarbg="color_8"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+      data-container="wide"
+      direction="ltr"
+      data-primary="color_11"
+>
+
+  <app-root>
+ 
+  </app-root>
+  <app-redirect></app-redirect>
+<script>
+  $( window ).resize(function() {
+var size = $(window).height()
+$('tbody').height(size-350)
+});
+function tableToExcel() {
+    $("#table2excel").table2excel({
+            filename: "Solicitudes.xls"
+        });
+ 
+}
+</script>
+</body>
+</html>

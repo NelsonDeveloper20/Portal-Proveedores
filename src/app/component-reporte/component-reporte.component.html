@@ -1,0 +1,280 @@
+<ngx-spinner
+  bdColor="rgba(255, 255, 255, 1)"
+  size="medium"
+  color="#5ee092"
+  type="ball-beat"
+  [fullScreen]="true"><p style="color: white">Loading...</p></ngx-spinner>
+  
+  <div
+  id="main-wrapper"
+  [ngClass]="{
+    'menu-toggle': sharedService.hamburgerClass,
+    '': !sharedService.hamburgerClass
+  }"
+  class="show"
+>
+
+ <style>
+.head-fixed {
+width: 100% 
+}
+.head-fixed > thead,
+.head-fixed > tbody,
+.head-fixed > thead > tr,
+.head-fixed > tbody > tr,
+.head-fixed > thead > tr > th,
+.head-fixed > tbody > tr > td {
+    display: block;
+}
+.head-fixed > tbody > tr:after,
+.head-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.head-fixed > tbody {
+    overflow-y: auto;
+    height: 400px;
+}
+.head-fixed > tbody > tr > td,
+.head-fixed > thead > tr > th {
+    width: 25%;
+    float: left;
+}
+.headth{
+max-width: 160px !important;
+min-width: 160px !important;
+font-size: 12px !important;
+padding: 10px 20px !important;
+text-align: center !important;
+font-weight: 900;
+text-transform: none !important;
+}
+ </style>
+  <div class="content-body">
+    <div  class="container default-mt-expansion default-autocomplete default-mt-btn"
+       style="max-width: 100% !important;">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12">          
+          <mat-accordion class="mat-accordion card example-headers-align">
+             <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h4>Reporte Solicitudes</h4>
+                </mat-panel-title>
+                <mat-panel-description> </mat-panel-description>
+              </mat-expansion-panel-header>            
+              <div class="basic-form">
+               <form>
+                  <div class="row">
+                    <div class="col-xl-4">
+                      <div class="form-group row">
+                        <label
+                          class="col-lg-4 col-form-label text-right label-item"
+                          for="fechaDeSolicitudInicio"
+                        >
+                          Fecha solicitud Inicio:
+                        </label>
+                        <div class="col-xl-7 col-lg-7">
+                          <div class="input-group">
+                            <input
+                              class="form-control"
+                              placeholder="yyyy-mm-dd"
+                              name="fechaDeSolicitudInicio"
+                              [(ngModel)]="frmSearch.fechaDeSolicitudInicio"
+                              ngbDatepicker
+                              #d="ngbDatepicker"
+                            />
+                            <div class="input-group-append">
+                              <button
+                                class="btn btn-outline-secondary flaticon-381-calendar"
+                                (click)="d.toggle()"
+                                type="button"
+                              ></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-4">
+                      <div class="form-group row">
+                        <label
+                          class="col-lg-4 col-form-label text-right label-item"
+                          for="fechaDeSolicitudFin"
+                        >
+                          Fecha solicitud Final:
+                        </label>
+                        <div class="col-xl-7 col-lg-7">
+                          <div class="input-group">
+                            <input
+                              class="form-control"
+                              placeholder="yyyy-mm-dd"
+                              name="fechaDeSolicitudFin" 
+                              ngbDatepicker
+                              #d2="ngbDatepicker"
+                            />
+                            <div class="input-group-append">
+                              <button
+                                class="btn btn-outline-secondary flaticon-381-calendar"
+                                (click)="d2.toggle()"
+                                type="button"
+                              ></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-4">
+                      <div class="form-group row">
+                        <label
+                          class="col-lg-4 col-form-label text-right label-item"
+                          for="unidadNegocio"
+                        >
+                          CC Unidad de negocio:
+                        </label>
+                        <div class="col-xl-7 col-lg-7">
+                          <select
+                            class="form-control form-control-lg default-select"
+                            name="unidadNegocio" 
+                          >
+                            <option selected value="">Todos</option>
+                            <option value="06TALLER">06TALLER</option>
+                            <option value="07REPUES">07REPUES</option>
+                            <option value="08PLANCH">08PLANCH</option> 
+
+                          </select> 
+                        </div>
+                      </div> 
+                    </div>
+                    <div class="col-xl-4">
+                      <div class="form-group row">
+                        <label
+                          class="col-lg-4 col-form-label text-right label-item"
+                          for="tienda"
+                        >
+                          Tienda:
+                        </label>
+                        <div class="col-xl-7 col-lg-7">
+                          <select
+                            class="form-control form-control-lg default-select"
+                            name="tienda"
+                            [(ngModel)]="frmSearch.tienda"
+                          >
+                            <option value="">Todos</option>
+                            <option value="SURQUIL">SURQUIL</option>
+                            <option value="SMIGUEL">SMIGUEL</option>
+                            <option value="MONTERO">MONTERO</option>
+                            <option value="SURCO">SURCO</option>
+                            <option value="IQUITOS">IQUITOS</option>
+                            <option value="CALLAO">CALLAO</option>
+                            <option value="PPATE">PPATE</option> 
+
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-4">
+                      <div class="form-group row">
+                        <label
+                          class="col-lg-4 col-form-label text-right label-item"
+                          for="codPedido"
+                        >
+                          N° Orden de Venta (Pedido):
+                        </label>
+                        <div class="col-xl-7 col-lg-7">
+                          <input
+                            type="text"
+                            class="form-control form-control-lg"
+                            placeholder=""
+                            name="codPedido" 
+                          />
+                        </div>
+                      </div>
+                    </div> 
+                    <div class="col-xl-4">
+                      <div class="form-group row">
+                        <div class="col-xl-2 col-lg-2"></div>
+                        <div class="col-xl-10 col-lg-10">
+                           
+                              
+                          <button
+                          (click)="buscarSolicitudes()" 
+                            type="button"
+                            class="btn btn-sm btn-primary">
+                            Buscar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form> 
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered w-auto small tableFixHead" style="overflow-x: hidden !important;">
+          <thead>
+              <tr>
+                <th class="headth">Codigo</th>
+                <th class="headth">Marca</th>
+                <th class="headth">Almacen</th>
+                <th class="headth">Icc</th>
+                <th class="headth">StockFisicoUbicacion</th>
+                <th class="headth">TipoRepuesto</th>
+                <th class="headth">LUN</th> 
+                <th class="headth">Enero</th>
+                <th class="headth">Febrero</th>
+                <th class="headth">Marzo</th>
+                <th class="headth">Abril</th>
+                <th class="headth">Mayo</th>
+                <th class="headth">Junio</th>
+                <th class="headth">Julio</th>
+                <th class="headth">Agosto</th>
+                <th class="headth">Setiembre</th>
+                <th class="headth">Octubre</th>
+                <th class="headth">Noviembre</th>
+                <th class="headth">Diciembre</th> 
+              </tr>
+          </thead>
+          <tbody  style="overflow-x: hidden !important;">
+           <tr *ngFor="let item of requestsPage">
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.codigo}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.Marca}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.Almacen}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.Icc}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.StockFisicoUbicacion}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.TipoRepuesto}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.LUN}}</td> 
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.enero}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.febrero}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.marzo}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.abril}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.mayo}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.junio}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.julio}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.agosto}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.setiembre}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.octubre}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.noviembre}}</td>
+            <td style="min-width: 160px; padding: 5px 10px !important;">{{ item.diciembre}}</td>  
+           </tr>
+          </tbody>
+        </table>
+        <div class="d-sm-flex d-block justify-content-between p-2">
+          <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshRequest()">
+          </ngb-pagination>  
+          <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshRequest()">
+            <option [ngValue]="50">50 items per page</option>
+            <option [ngValue]="60">60 items per page</option>
+            <option [ngValue]="70">70 items per page</option>
+            <option [ngValue]="100">100 items per page</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-switcher></app-switcher>

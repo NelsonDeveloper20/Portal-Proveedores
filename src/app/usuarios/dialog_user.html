@@ -1,0 +1,27 @@
+<h3 mat-dialog-title>Usuario Creado</h3>
+<div mat-dialog-content>
+  <h6>Envie  sus credenciales al proveedor registrado :</h6>
+  <ul>
+    <li>
+      <span >Nombre:  </span><b> {{data.nombre}}</b>
+    </li>
+    <li>
+      <span>Ruc:  </span> <b>{{data.ruc}}</b>
+    </li>
+    <li>
+      <span>Razon social:  </span> <b>{{data.razonsocial}}</b>
+    </li>
+    <li>
+      <span>Correo de acceso:  </span> <b>{{data.correo}}</b>
+    </li>
+    <li>
+      <span>Clave de acceso:  </span> <b>{{data.clave}}</b>
+    </li>
+  </ul>
+  <br><br><br>
+<div mat-dialog-actions>
+    <button mat-button class="btn btn-sm btn-primary" (click)="close()">
+      Aceptar
+    </button> 
+  </div>
+</div>

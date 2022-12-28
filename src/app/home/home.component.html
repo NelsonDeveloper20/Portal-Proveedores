@@ -1,0 +1,34 @@
+
+<div id="main-wrapper" [ngClass]="{'menu-toggle': sharedService.hamburgerClass, '': !sharedService.hamburgerClass}"  class="show" >
+            
+            
+    <!-- <app-loading></app-loading> -->
+    
+    <app-nav-header></app-nav-header>
+    <app-header></app-header>
+    <app-navigation></app-navigation> 
+    
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+    
+                    <div class="card">
+                        <div class="card-header">
+<!--
+                            <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
+                            <button mat-raised-button *ngIf="loginDisplay" (click)="logout()">Logout</button>
+                            -->
+                        </div>
+                        
+                    </div>
+    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <app-footer></app-footer>
+</div>
+<app-switcher></app-switcher>

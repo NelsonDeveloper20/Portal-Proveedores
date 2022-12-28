@@ -1,0 +1,97 @@
+<style>
+  .row{
+    margin-bottom: 17px;
+  }
+</style>
+<h2 mat-dialog-title>Registrar Usuario</h2>
+<div mat-dialog-content>
+   
+    <div class="form-group"> 
+      <div class="row">
+        <div class="col-lg-6">
+          <label class="text-right label-item" for="usuario"> Correo: </label>
+          <div class="">
+            <input
+              type="text"
+              class="form-control form-control-lg" 
+              [(ngModel)]="users.correoelectronico"  placeholder="Ingrese usuario"  required
+            />
+          </div> 
+          </div>
+          <div class="col-lg-6">
+            <label class="text-right label-item"  for="usuario"> Nombre: </label>
+            <div class="">
+              <input
+                type="text"
+                class="form-control form-control-lg"  
+                placeholder="Ingrese nombre"                 
+            [(ngModel)]="users.nombre"   required
+              />
+            </div>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <label class="text-right label-item" for="usuario"> Ruc: </label>
+          <div class="">
+            <input
+              type="text"
+              class="form-control form-control-lg"
+                placeholder="Ingrese ruc" 
+              [(ngModel)]="users.ruc" required
+            />
+          </div>
+          </div> 
+          <div class="col-lg-6">
+            <label class="text-right label-item" for="usuario"> Razón Social: </label>
+            <div class="">
+              <input
+                type="text"
+                class="form-control form-control-lg"  
+                [(ngModel)]="users.razonsocial"   required
+              />
+            </div>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+
+          <label class="text-right label-item" for="rolUser"> Rol: </label>
+          <div class="">
+             <select
+              class="form-control form-control-lg default-select"
+              name="rolUser"
+              [(ngModel)]="users.rol"
+            >
+              <option value="">Seleccionar</option>
+              <option *ngFor="let rol of roles" [value]="rol.id">
+                {{ rol.nombre }}
+              </option>
+            </select> 
+          </div>
+          
+        </div>
+        <!--<div class="col-lg-6">
+          <label class="text-right label-item" for="state"> Estado: </label>
+          <div class="">
+            <select
+              class="form-control form-control-lg default-select"
+              name="state"
+              [(ngModel)]="users.estado"
+            >
+              <option value="Activo">Activo</option>
+              <option value="Inactivo">Inactivo</option>
+            </select>
+          </div>
+        </div>-->
+        
+      </div>
+         
+    </div> 
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="btn btn-sm btn-primary" (click)="save()">
+    Grabar
+  </button>
+  <button mat-button mat-dialog-close>Cerrar</button>
+</div>

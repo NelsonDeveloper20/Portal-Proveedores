@@ -1,0 +1,171 @@
+<ngx-spinner
+  bdColor="rgba(255, 255, 255, 1)"
+  size="medium"
+  color="#0D7ABD"
+  type="ball-beat"
+  [fullScreen]="true"
+  ><p style="color: black">Loading...</p></ngx-spinner>
+  <app-header></app-header>
+ <style>
+  .mat-badge-content {
+    background-color: #f77676 !important;
+}
+ </style>
+<div class="main-content">
+  <div class="container-fluid">
+      
+      <div class="row">
+        
+          <div class="col-lg-12 col-md-12">
+              <div class="">
+                  <div class="card-header card-header-warning" style="    width: 18%;
+                  padding-bottom: 0px;
+                  padding-top: 0px;">
+                    <div class="card-icon">
+                        <button mat-icon-button color="primary" (click)="backClicked()" aria-label="Example icon button with a home icon">
+                            <mat-icon>keyboard_backspace</mat-icon>
+                          </button> 
+                    </div>
+                    <h5 class="card-title" style="font-size: 15px;
+                    font-weight: 500;
+                    color: #000000a3;
+                    text-transform: capitalize;">Consultar Factura</h5> 
+                      
+                  </div>
+                  
+                  <div class="card-body table-responsive">
+                      <div class="example-header">
+<div class="row">
+
+
+
+      <div class="col-lg-3"> 
+       <div class="mat-form-field--inline "> 
+          <mat-form-field   >
+              <mat-label>Desde</mat-label>
+              <input matInput [matDatepicker]="picker" 
+              [(ngModel)]="flightSchedule.date"  datePickerFormat="dd/MM/yyyy">
+              <mat-hint>dd/mm/yyyy</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+      </div>
+      </div> 
+      
+      <div class="col-lg-3">
+      <div class="mat-form-field--inline"> 
+          <mat-form-field  >
+              <mat-label>Hasta</mat-label>
+              <input matInput [matDatepicker]="picker2" 
+              [(ngModel)]="flightSchedule.datefin" > <mat-hint>dd/mm/yyyy</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field> 
+      </div>
+      </div>
+      
+      <div class="col-lg-1">
+          <div class="example-button-container">
+              <button mat-fab color="primary" (click)="loadRequest()" aria-label="Example icon button with a delete icon">
+                <mat-icon>search</mat-icon>
+              </button>
+            </div> 
+      </div> 
+</div>
+                                  
+
+                        </div>
+                        <br>
+                        <div class="example-container mat-elevation-z8" style="background: white;">
+                          <mat-form-field style="left: 24px;">
+                              <input matInput   placeholder="Buscar" (keyup)="buscar($event)">
+                              </mat-form-field>
+                          <mat-table [dataSource]="dataSource" matSort>
+                        
+                            <!-- ID Column [(ngModel)]="searchs"-->
+                            <ng-container matColumnDef="id">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                              <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+                            </ng-container>
+                          
+                              <!-- Name Column -->
+                              <ng-container matColumnDef="Fecha registro">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha registro</mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.fechacarga}} </mat-cell>
+                              </ng-container>
+                              <!-- Name Column -->
+                              <ng-container matColumnDef="Fecha Emision">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header>Fecha Emision</mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.fechaemision}} </mat-cell>
+                              </ng-container>
+                              <!-- Progress Column -->
+                              <ng-container matColumnDef="Num Factura">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Nº Factura </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.numfactura}}</mat-cell>
+                              </ng-container>
+                          
+                              <!-- Name Column -->
+                              <ng-container matColumnDef="N pedido">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Nº Pedido</mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.numpedido}} </mat-cell>
+                              </ng-container>
+                            
+                              <!-- Color Column -->
+                              <ng-container matColumnDef="Numero HES">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Numero HES </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.codigoproyecto}} </mat-cell>
+                              </ng-container>
+                              <!-- Name Column -->
+                              <ng-container matColumnDef="SubTotal">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Sub Total </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.subtotal}} </mat-cell>
+                              </ng-container>
+                              <!-- Name Column -->
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="Cargado por">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header> Cargado Por </mat-header-cell>
+                              <mat-cell *matCellDef="let row"> {{row.usuariocreacion}} </mat-cell>
+                            </ng-container>
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="Fecha de Carga">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header> Fechade Carga </mat-header-cell>
+                              <mat-cell *matCellDef="let row"> {{row.fechacarga}} </mat-cell>
+                            </ng-container>
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="Adjuntos">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header> Adjuntos </mat-header-cell>
+                              <mat-cell *matCellDef="let row">  
+                                  <button mat-icon-button color="primary" (click)="downloadfiles(row.archivopdf,row.archivoxml)">
+                                    <mat-icon matBadge="2">cloud_download</mat-icon>
+                                    </button>
+                            
+                                    
+
+                              </mat-cell>
+                            </ng-container>
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="Estado factura">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header> Estado Factura </mat-header-cell>
+                              <mat-cell *matCellDef="let row"> {{row.estadofactura}} 
+                                  <button mat-icon-button color="primary"  (click)="gotoUser(row)" >
+                                      <mat-icon aria-label="Delete">visibility</mat-icon>
+                                    </button>
+                              </mat-cell>
+                            </ng-container>
+                        
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;">
+                            </mat-row>
+                          </mat-table>
+                        
+                          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                        </div>
+
+                         
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

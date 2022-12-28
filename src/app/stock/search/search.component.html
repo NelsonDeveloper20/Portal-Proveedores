@@ -1,0 +1,604 @@
+
+<div id="main-wrapper" [ngClass]="{'menu-toggle': sharedService.hamburgerClass, '': !sharedService.hamburgerClass}"  class="show" >
+            
+            
+    <!-- <app-loading></app-loading> -->
+    
+    <app-nav-header></app-nav-header>
+    <app-header></app-header>
+    <app-navigation></app-navigation> 
+    
+    <!--
+    <router-outlet>
+    </router-outlet>-->
+    
+<div class="content-body">
+    <div class="container-fluid default-mt-expansion default-autocomplete default-mt-btn">
+
+        <!-- <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h2>Hola, Bienvenido!</h2>
+                    <p class="mb-0">Este es tu formulario de búsqueda de Stock</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Resumen</a></li>
+                    <li class="breadcrumb-item "><a href="javascript:void(0)">Detalle</a></li>
+                </ol>
+            </div>
+        </div> -->
+
+        <div class="row">
+			<div class="col-xl-12 col-lg-12">                  
+
+                 <mat-accordion class="mat-accordion card example-headers-align">
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3>Buscar</h3>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <div class="basic-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Modelo:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <select class="form-control form-control-lg default-select ">
+                                                <option>Todos</option>
+                                                <option>Yaris</option>
+                                                <option>Rav4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Artículo:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <input type="text" class="form-control form-control-lg" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Color:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <input type="text" class="form-control form-control-lg" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Año Modelo:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <input type="text" class="form-control form-control-lg" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label text-right label-item" for="username">Estado:
+                                        </label>
+                                        <div class="col-xl-7 col-lg-7">
+                                            <select class="form-control form-control-lg default-select ">
+                                                <option>Todos</option>
+                                                <option>Disponible</option>
+                                                <option>Diponible devuelto</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group row">
+                                        <div class="col-xl-2 col-lg-2">
+                                        </div>
+                                        <div class="col-xl-10 col-lg-10">
+                                            <button type="button" class="btn btn-sm btn-primary">Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                  
+                    </mat-expansion-panel>
+                  </mat-accordion> 
+
+                <!-- <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Buscar</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <form>
+                                <div class="row">
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Modelo:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Artículo:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Color:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Año Modelo:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label text-right label-item" for="username">Estado:
+                                            </label>
+                                            <div class="col-xl-7 col-lg-7">
+                                                <input type="text" class="form-control form-control-lg" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="form-group row">
+                                            <div class="col-xl-1 col-lg-1">
+                                            </div>
+                                            <div class="col-xl-11 col-lg-11">
+                                                <button type="button" class="btn btn-sm btn-primary">Buscar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="col-sm-2 col-lg-2 col-md-2 form-group d-block">
+            <mat-slide-toggle [(ngModel)]="isChecked">         
+                 <div *ngIf="isChecked">
+                    Vista resumen
+                  </div>
+                  <div *ngIf="!isChecked">
+                    Vista detalle
+                  </div>    
+            </mat-slide-toggle>
+        </div>
+
+        <div class="card">
+            <!-- <div class="row"><br>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-lg-10 col-md-10 form-group d-block">
+
+                </div>
+                <div class="col-sm-2 col-lg-2 col-md-2 form-group d-block">
+                    <mat-slide-toggle [(ngModel)]="isChecked">         
+                         <div *ngIf="isChecked">
+                            Vista resumen
+                          </div>
+                          <div *ngIf="!isChecked">
+                            Vista detalle
+                          </div>    
+                    </mat-slide-toggle>
+                </div>
+            </div> -->
+            <div class="row"><br>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-6 col-lg-2 col-md-4 card-item">
+                    <div class="card" style="background-color: #DBE8F1;">
+                        <div class="card-header">
+                            <h4 class="card-title">1652 - Corolla</h4>
+                            <div class="bootstrap-badge">
+                                <a href="javascript:void()" class="badge badge-lg badge-primary">10</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <strong style="color: black;">3</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <strong style="color: black;">7</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <a href="#/admin/searchdetail" class=" view-grid" placement="top" ngbTooltip="Ver detalle">
+                                <svg class="primary-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1H4C2.34315 1 1 2.34315 1 4V8C1 9.65685 2.34315 11 4 11H8C9.65685 11 11 9.65685 11 8V4C11 2.34315 9.65685 1 8 1Z" fill="#43DC80"/>
+                                    <path d="M20 1H16C14.3431 1 13 2.34315 13 4V8C13 9.65685 14.3431 11 16 11H20C21.6569 11 23 9.65685 23 8V4C23 2.34315 21.6569 1 20 1Z" fill="#43DC80"/>
+                                    <path d="M8 13H4C2.34315 13 1 14.3431 1 16V20C1 21.6569 2.34315 23 4 23H8C9.65685 23 11 21.6569 11 20V16C11 14.3431 9.65685 13 8 13Z" fill="#43DC80"/>
+                                    <path d="M20 13H16C14.3431 13 13 14.3431 13 16V20C13 21.6569 14.3431 23 16 23H20C21.6569 23 23 21.6569 23 20V16C23 14.3431 21.6569 13 20 13Z" fill="#43DC80"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-4 card-item">
+                    <div class="card" style="background-color: #DBE8F1;">
+                        <div class="card-header">
+                            <h4 class="card-title">1593 - Yaris Hatbach</h4>
+                            <div class="bootstrap-badge">
+                                <a href="javascript:void()" class="badge badge-lg badge-primary">10</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <strong style="color: black;">3</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <strong style="color: black;">7</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <a href="#/admin/searchdetail" class=" view-grid" placement="top" ngbTooltip="Ver detalle">
+                                <svg class="primary-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1H4C2.34315 1 1 2.34315 1 4V8C1 9.65685 2.34315 11 4 11H8C9.65685 11 11 9.65685 11 8V4C11 2.34315 9.65685 1 8 1Z" fill="#43DC80"/>
+                                    <path d="M20 1H16C14.3431 1 13 2.34315 13 4V8C13 9.65685 14.3431 11 16 11H20C21.6569 11 23 9.65685 23 8V4C23 2.34315 21.6569 1 20 1Z" fill="#43DC80"/>
+                                    <path d="M8 13H4C2.34315 13 1 14.3431 1 16V20C1 21.6569 2.34315 23 4 23H8C9.65685 23 11 21.6569 11 20V16C11 14.3431 9.65685 13 8 13Z" fill="#43DC80"/>
+                                    <path d="M20 13H16C14.3431 13 13 14.3431 13 16V20C13 21.6569 14.3431 23 16 23H20C21.6569 23 23 21.6569 23 20V16C23 14.3431 21.6569 13 20 13Z" fill="#43DC80"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-4 card-item">
+                    <div class="card" style="background-color: #DBE8F1;">
+                        <div class="card-header">
+                            <h4 class="card-title">1880 - Fortuner</h4>
+                            <div class="bootstrap-badge">
+                                <a href="javascript:void()" class="badge badge-lg badge-primary">10</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <strong style="color: black;">3</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <strong style="color: black;">7</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <a href="#/admin/searchdetail" class=" view-grid" placement="top" ngbTooltip="Ver detalle">
+                                <svg class="primary-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1H4C2.34315 1 1 2.34315 1 4V8C1 9.65685 2.34315 11 4 11H8C9.65685 11 11 9.65685 11 8V4C11 2.34315 9.65685 1 8 1Z" fill="#43DC80"/>
+                                    <path d="M20 1H16C14.3431 1 13 2.34315 13 4V8C13 9.65685 14.3431 11 16 11H20C21.6569 11 23 9.65685 23 8V4C23 2.34315 21.6569 1 20 1Z" fill="#43DC80"/>
+                                    <path d="M8 13H4C2.34315 13 1 14.3431 1 16V20C1 21.6569 2.34315 23 4 23H8C9.65685 23 11 21.6569 11 20V16C11 14.3431 9.65685 13 8 13Z" fill="#43DC80"/>
+                                    <path d="M20 13H16C14.3431 13 13 14.3431 13 16V20C13 21.6569 14.3431 23 16 23H20C21.6569 23 23 21.6569 23 20V16C23 14.3431 21.6569 13 20 13Z" fill="#43DC80"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+                <div class="col-sm-6 col-lg-2 col-md-4 card-item">
+                    <div class="card" style="background-color: #DBE8F1;">
+                        <div class="card-header">
+                            <h4 class="card-title">1590 - Yaris</h4>
+                            <div class="bootstrap-badge">
+                                <a href="javascript:void()" class="badge badge-lg badge-primary">10</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <strong style="color: black;">3</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <strong style="color: black;">7</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <a href="#/admin/searchdetail" class=" view-grid" placement="top" ngbTooltip="Ver detalle">
+                                <svg class="primary-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1H4C2.34315 1 1 2.34315 1 4V8C1 9.65685 2.34315 11 4 11H8C9.65685 11 11 9.65685 11 8V4C11 2.34315 9.65685 1 8 1Z" fill="#43DC80"/>
+                                    <path d="M20 1H16C14.3431 1 13 2.34315 13 4V8C13 9.65685 14.3431 11 16 11H20C21.6569 11 23 9.65685 23 8V4C23 2.34315 21.6569 1 20 1Z" fill="#43DC80"/>
+                                    <path d="M8 13H4C2.34315 13 1 14.3431 1 16V20C1 21.6569 2.34315 23 4 23H8C9.65685 23 11 21.6569 11 20V16C11 14.3431 9.65685 13 8 13Z" fill="#43DC80"/>
+                                    <path d="M20 13H16C14.3431 13 13 14.3431 13 16V20C13 21.6569 14.3431 23 16 23H20C21.6569 23 23 21.6569 23 20V16C23 14.3431 21.6569 13 20 13Z" fill="#43DC80"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>                  
+                </div>          
+                <div class="col-sm-6 col-lg-2 col-md-4 card-item">
+                    <div class="card" style="background-color: #DBE8F1;">
+                        <div class="card-header">
+                            <h4 class="card-title">1752 - Rush</h4>
+                            <div class="bootstrap-badge">
+                                <a href="javascript:void()" class="badge badge-lg badge-primary">10</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <strong style="color: black;">3</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <strong style="color: black;">7</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <a href="#/admin/searchdetail" class=" view-grid" placement="top" ngbTooltip="Ver detalle">
+                                <svg class="primary-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1H4C2.34315 1 1 2.34315 1 4V8C1 9.65685 2.34315 11 4 11H8C9.65685 11 11 9.65685 11 8V4C11 2.34315 9.65685 1 8 1Z" fill="#43DC80"/>
+                                    <path d="M20 1H16C14.3431 1 13 2.34315 13 4V8C13 9.65685 14.3431 11 16 11H20C21.6569 11 23 9.65685 23 8V4C23 2.34315 21.6569 1 20 1Z" fill="#43DC80"/>
+                                    <path d="M8 13H4C2.34315 13 1 14.3431 1 16V20C1 21.6569 2.34315 23 4 23H8C9.65685 23 11 21.6569 11 20V16C11 14.3431 9.65685 13 8 13Z" fill="#43DC80"/>
+                                    <path d="M20 13H16C14.3431 13 13 14.3431 13 16V20C13 21.6569 14.3431 23 16 23H20C21.6569 23 23 21.6569 23 20V16C23 14.3431 21.6569 13 20 13Z" fill="#43DC80"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-4 card-item">
+                    <div class="card " style="background-color: #DBE8F1;">
+                        <div class="card-header">
+                            <h4 class="card-title">1587 - Rav4</h4>
+                            <div class="bootstrap-badge">
+                                <a href="javascript:void()" class="badge badge-lg badge-primary">10</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            
+                            <div class="card-body-cards">
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #8f3535;">drive_eta</mat-icon>
+                                    <strong style="color: black;">3</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #1f0a97;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #07611d;">drive_eta</mat-icon>
+                                    <strong style="color: black;">7</strong>
+                                </div>
+                                <div class="row">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: #da952f;">drive_eta</mat-icon>
+                                    <strong style="color: black;">5</strong>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                
+                            </div>
+                            <a href="#/admin/searchdetail" class=" view-grid" placement="top" ngbTooltip="Ver detalle">
+                                <svg class="primary-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1H4C2.34315 1 1 2.34315 1 4V8C1 9.65685 2.34315 11 4 11H8C9.65685 11 11 9.65685 11 8V4C11 2.34315 9.65685 1 8 1Z" fill="#43DC80"/>
+                                    <path d="M20 1H16C14.3431 1 13 2.34315 13 4V8C13 9.65685 14.3431 11 16 11H20C21.6569 11 23 9.65685 23 8V4C23 2.34315 21.6569 1 20 1Z" fill="#43DC80"/>
+                                    <path d="M8 13H4C2.34315 13 1 14.3431 1 16V20C1 21.6569 2.34315 23 4 23H8C9.65685 23 11 21.6569 11 20V16C11 14.3431 9.65685 13 8 13Z" fill="#43DC80"/>
+                                    <path d="M20 13H16C14.3431 13 13 14.3431 13 16V20C13 21.6569 14.3431 23 16 23H20C21.6569 23 23 21.6569 23 20V16C23 14.3431 21.6569 13 20 13Z" fill="#43DC80"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+    <!-- <app-footer></app-footer> -->
+</div>
+<app-switcher></app-switcher>
+
